@@ -41,5 +41,14 @@ Make sure to deploy the output of `npm run build`
 npx create-remix@latest
 npm i @remix-run/node @remix-run/react @remix-run/serve isbot@4 react react-dom
 npm install -D tailwindcss postcss autoprefixer
+npm install -D @mdx-js/rollup
+npm install -D remark-frontmatter remark-mdx-frontmatter
 
-``
+```
+
+## MD to Web
+
+1. [add-mdx-plugin](https://remix.run/docs/en/main/guides/vite#add-mdx-plugin) 
+2. Add MDX [frontmatter support](https://github.com/remcohaszing/remark-mdx-frontmatter)
+3. 
+
