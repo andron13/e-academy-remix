@@ -1,9 +1,9 @@
-import { readPost } from "~/readPost.server";
 import { useLoaderData } from "@remix-run/react";
 import { LoaderFunctionArgs } from "@remix-run/router/utils";
 import parseFrontMatter from "front-matter";
-import { Attributes, Body } from "~/type";
 import ReactMarkdown from "react-markdown";
+import { readPost } from "~/lib/readPost.server";
+import { Attributes, Body } from "~/lib/type";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { slug } = params;

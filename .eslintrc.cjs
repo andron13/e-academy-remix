@@ -35,6 +35,18 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
       ],
+      rules: {
+        'import/order': [
+          'error',
+          {
+            groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'object', 'type', 'index'],
+            alphabetize: {
+              order: 'asc',
+              caseInsensitive: true,
+            },
+          },
+        ],
+      },
       settings: {
         react: {
           version: "detect",
