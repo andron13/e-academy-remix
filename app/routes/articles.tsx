@@ -6,7 +6,7 @@ export async function loader() {
 }
 
 export default function ArticleComponent() {
-  const data = useLoaderData<typeof loader>();
-  console.log({ data });
-  return <div>{data}</div>;
+  const markdown = useLoaderData<typeof loader>();
+
+  return <div>{markdown}</div>;
 }
