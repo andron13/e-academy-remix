@@ -34,3 +34,12 @@ Make sure to deploy the output of `npm run build`
 
 - `build/server`
 - `build/client`
+
+## How to install new site
+
+```bash
+npx create-remix@latest
+npm i @remix-run/node @remix-run/react @remix-run/serve isbot@4 react react-dom
+npm install -D tailwindcss postcss autoprefixer
+
+``
