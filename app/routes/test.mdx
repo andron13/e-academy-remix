@@ -1,12 +1,18 @@
 ---
-meta:
-  title: Remix and Markdown, A Configuration Test
-  description: Test run for Markdown setup in Remix Framework.
-headers:
-  Cache-Control: no-cache
+title: Remix and Markdown, A Configuration Test
+description: Test run for Markdown setup in Remix Framework.
 ---
 
+export const meta = () => {
+  return [
+    { name: 'title', content: frontmatter.title },
+    { name: 'description', content: frontmatter.description },
+  ];
+};
+
 # Remix Markdown Setup
+
+## mdx-plugin and MDX frontmatter support
 
 This article is essentially a test for configuring Markdown in Remix Framework. Markdown, with its user-friendly formatting syntax, can significantly enhance web content creation in the Remix environment.
 

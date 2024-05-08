@@ -3,9 +3,16 @@ import { installGlobals } from "@remix-run/node";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import mdx from "@mdx-js/rollup";
-
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 installGlobals();
 
 export default defineConfig({
-  plugins: [mdx(), remix(), tsconfigPaths()],
+  plugins: [
+    mdx({
+      remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+    }),
+    remix(),
+    tsconfigPaths(),
+  ],
 });
