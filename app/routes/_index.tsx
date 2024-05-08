@@ -12,6 +12,12 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const posts = import.meta.glob("./../posts/*.mdx", {
+    eager: true,
+  });
+
+  //TODO LOADER
+  console.log(posts);
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Remix and Markdown, A Configuration Test</h1>
