@@ -25,6 +25,9 @@ export default function Index() {
         <li>
           <Link to="/blog/test">/blog/test</Link>
         </li>
+        <li>
+          <Link to="/githubtest">/githubtest</Link>
+        </li>
       </ul>
     </div>
   );
