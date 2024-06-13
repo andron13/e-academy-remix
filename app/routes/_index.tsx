@@ -3,11 +3,11 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Programming Courses for Beginners" },
+    { title: "Курсы программирования для начинающих" },
     {
       name: "description",
       content:
-        "Start your journey in programming with our beginner-friendly courses.",
+        "Начните свое путешествие в мир программирования с нашими курсами для начинающих.",
     },
   ];
 };
@@ -19,80 +19,128 @@ export default function Index() {
         fontFamily: "Arial, sans-serif",
         lineHeight: "1.6",
         backgroundColor: "#ffffff",
-        padding: "20px",
         color: "#333333",
         height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
-      <nav
+      <header
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          paddingBottom: "1rem",
+          padding: "20px",
         }}
       >
-        <h2>Programming Courses for Beginners</h2>
-        <ul style={{ listStyle: "none", display: "flex", gap: "2rem" }}>
-          <li>
-            <Link
-              to="/blog/test"
-              style={{
-                textDecoration: "none",
-                color: "#333333",
-                fontSize: "16px",
-              }}
-            >
-              Test Blog
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/articles"
-              style={{
-                textDecoration: "none",
-                color: "#333333",
-                fontSize: "16px",
-              }}
-            >
-              Articles
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/test"
-              style={{
-                textDecoration: "none",
-                color: "#333333",
-                fontSize: "16px",
-              }}
-            >
-              Test Page
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <h2>Курсы программирования для начинающих</h2>
+          <ul style={{ listStyle: "none", display: "flex", gap: "2rem" }}>
+            <li>
+              <Link
+                to="/blog/test"
+                style={{
+                  textDecoration: "none",
+                  color: "#333333",
+                  fontSize: "16px",
+                }}
+              >
+                Блог
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/articles"
+                style={{
+                  textDecoration: "none",
+                  color: "#333333",
+                  fontSize: "16px",
+                }}
+              >
+                Статьи
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/test"
+                style={{
+                  textDecoration: "none",
+                  color: "#333333",
+                  fontSize: "16px",
+                }}
+              >
+                Тесты
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                style={{
+                  textDecoration: "none",
+                  color: "#333333",
+                  fontSize: "16px",
+                }}
+              >
+                О нас
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contacts"
+                style={{
+                  textDecoration: "none",
+                  color: "#333333",
+                  fontSize: "16px",
+                }}
+              >
+                Контакты
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-      <h1>Welcome to our Programming Courses for Beginners!</h1>
-      <p>
-        Start your journey in programming with our beginner-friendly courses.
-        Choose from a variety of programming languages and topics.
-      </p>
-
-      <p>Don't wait. Start learning today!</p>
-
-      <button
+      <main
         style={{
-          backgroundColor: "#007BFF",
-          color: "white",
-          border: "none",
-          padding: "12px 24px",
-          borderRadius: "4px",
-          fontSize: "18px",
-          cursor: "pointer",
+          padding: "20px",
         }}
       >
-        Sign Up
-      </button>
+        <h1>Добро пожаловать на наши курсы программирования для начинающих!</h1>
+        <p>
+          Начните свое путешествие в мир программирования с нашими курсами для
+          начинающих. Выберите из множества языков и интересных тем.
+        </p>
+
+        <p>Не ждите. Начните учиться сегодня!</p>
+
+        <button
+          style={{
+            backgroundColor: "#007BFF",
+            color: "white",
+            border: "none",
+            padding: "12px 24px",
+            borderRadius: "4px",
+            fontSize: "18px",
+            cursor: "pointer",
+          }}
+        >
+          Зарегистрироваться
+        </button>
+      </main>
+
+      <footer
+        style={{
+          padding: "20px",
+          borderTop: "1px solid #333333",
+          textAlign: "center",
+          marginTop: "15px",
+        }}
+      >
+        <p>Все права защищены © {new Date().getFullYear()}</p>
+      </footer>
     </div>
   );
 }
