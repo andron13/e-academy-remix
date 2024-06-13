@@ -1,8 +1,8 @@
 import { useLoaderData } from "@remix-run/react";
-import { readPost } from "~/lib/readPost.server";
+import { readPostByFileName } from "~/lib/readPost.server";
 
 export async function loader() {
-  return await readPost("test.md");
+  return await readPostByFileName("test.md");
 }
 
 export default function ArticleComponent() {

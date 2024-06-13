@@ -20,11 +20,16 @@ export default function Index() {
           <h2>Курсы программирования для начинающих</h2>
           <ul className="list-none flex gap-6">
             <li>
+              <Link to="/blog" className="text-gray-800 text-lg no-underline">
+                Блог
+              </Link>
+            </li>{" "}
+            <li>
               <Link
-                to="/blog/test"
+                to="/blog/test-slug"
                 className="text-gray-800 text-lg no-underline"
               >
-                Блог
+                Блогtest
               </Link>
             </li>
             <li>
