@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply mx-auto max-w-big ;
+        font-family: "system-ui, sans-serif", serif;
+    }
+
+    header, aside, main {
+    }
+
+    h1 {
+        @apply text-3xl 2xl:text-6xl xl:text-5xl;
+    }
+
+    h2 {
+        @apply text-3xl xl:text-3xl;
+    }
+
+    h3, h4, h5, h6 {
+        @apply text-2xl ;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply text-teal-800 py-2 font-bold;
+    }
+
+    main {
+        @apply p-2 md:p-5;
+    }
+
+    aside {
+        @apply p-2 2xl:p-5;
+    }
+
+    li, a {
+        @apply break-words lg:text-xl;
+    }
+
+    footer {
+        @apply  md:p-5;
+    }
+
+    p {
+        @apply my-2 text-justify lg:text-left;
+    }
+}
+
+
+@layer utilities {
+
+}
+
+
+
+

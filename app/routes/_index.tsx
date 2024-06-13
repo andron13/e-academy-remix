@@ -14,44 +14,15 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div
-      style={{
-        fontFamily: "Arial, sans-serif",
-        lineHeight: "1.6",
-        color: "#333333",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        background: "linear-gradient(#E6E6FA, #F8F8FF)",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      <header
-        style={{
-          padding: "20px",
-          backgroundImage: "linear-gradient(to right, #E6E6FA, #F0F8FF)",
-          borderBottom: "1px solid #333",
-          zIndex: 1,
-        }}
-      >
-        <nav
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+    <div className="font-sans leading-6 text-gray-800 h-screen flex flex-col justify-between bg-gradient-to-b from-purple-100 to-white relative overflow-hidden">
+      <header className="p-5 bg-gradient-to-r from-purple-100 to-blue-100 border-b border-gray-800 z-10">
+        <nav className="flex justify-between">
           <h2>Курсы программирования для начинающих</h2>
-          <ul style={{ listStyle: "none", display: "flex", gap: "2rem" }}>
+          <ul className="list-none flex gap-6">
             <li>
               <Link
                 to="/blog/test"
-                style={{
-                  textDecoration: "none",
-                  color: "#333333",
-                  fontSize: "16px",
-                }}
+                className="text-gray-800 text-lg no-underline"
               >
                 Блог
               </Link>
@@ -59,47 +30,25 @@ export default function Index() {
             <li>
               <Link
                 to="/articles"
-                style={{
-                  textDecoration: "none",
-                  color: "#333333",
-                  fontSize: "16px",
-                }}
+                className="text-gray-800 text-lg no-underline"
               >
                 Статьи
               </Link>
             </li>
             <li>
-              <Link
-                to="/test"
-                style={{
-                  textDecoration: "none",
-                  color: "#333333",
-                  fontSize: "16px",
-                }}
-              >
+              <Link to="/test" className="text-gray-800 text-lg no-underline">
                 Тесты
               </Link>
             </li>
             <li>
-              <Link
-                to="/about"
-                style={{
-                  textDecoration: "none",
-                  color: "#333333",
-                  fontSize: "16px",
-                }}
-              >
+              <Link to="/about" className="text-gray-800 text-lg no-underline">
                 О нас
               </Link>
             </li>
             <li>
               <Link
                 to="/contacts"
-                style={{
-                  textDecoration: "none",
-                  color: "#333333",
-                  fontSize: "16px",
-                }}
+                className="text-gray-800 text-lg no-underline"
               >
                 Контакты
               </Link>
@@ -108,64 +57,30 @@ export default function Index() {
         </nav>
       </header>
 
-      <main
-        style={{
-          padding: "20px",
-          flex: "1",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          zIndex: 1,
-        }}
-      >
+      <main className="p-5 flex-1 flex flex-col items-center justify-center z-10">
         <h1>Добро пожаловать на наши курсы программирования для начинающих!</h1>
         <p>
           Начните свое путешествие в мир программирования с нашими курсами для
           начинающих. Выберите из множества языков и интересных тем.
         </p>
-
         <p>
           Наши курсы помогут вам освоить базовые концепции и принципы
           программирования. Вам не нужно иметь предыдущего опыта в
           программировании, чтобы начать. Наши опытные преподаватели готовы
           поддержать вас на каждом этапе обучения.
         </p>
-
         <p>
           Вместе мы разберемся с основами Python, JavaScript, HTML, CSS и многих
           других технологий. Вы также научитесь построению веб-сайтов, созданию
           интерактивных приложений и многое другое!
         </p>
-
         <p>Не ждите. Начните учиться сегодня!</p>
-
-        <button
-          style={{
-            backgroundColor: "#007BFF",
-            color: "white",
-            border: "none",
-            padding: "12px 24px",
-            borderRadius: "4px",
-            fontSize: "18px",
-            cursor: "pointer",
-            marginTop: "20px",
-          }}
-        >
+        <button className="bg-blue-500 text-white border-none px-8 py-3 rounded text-lg cursor-pointer mt-5">
           Зарегистрироваться
         </button>
       </main>
 
-      <footer
-        style={{
-          padding: "20px",
-          borderTop: "1px solid #333333",
-          textAlign: "center",
-          marginTop: "15px",
-          backgroundColor: "#E6E6FA",
-          zIndex: 1,
-        }}
-      >
+      <footer className="p-5 border-t border-gray-800 text-center mt-4 bg-purple-100 z-10">
         <p>Все права защищены © {new Date().getFullYear()}</p>
       </footer>
     </div>
