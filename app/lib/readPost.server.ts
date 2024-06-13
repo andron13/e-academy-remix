@@ -9,45 +9,45 @@ export async function readPostByFileName(fileName: string) {
 }
 
 function isMarkdown(file: string) {
-  return path.extname(file) === ".md";
+  return path.extname(file) === ".md" || path.extname(file) === ".markdown";
 }
 
 async function getFiles(dir: string): Promise<string[]> {
-  const dirents = await fs.readdir(dir, { withFileTypes: true });
-  const files = await Promise.all(
-    dirents.map((dirent) => {
-      const res = path.resolve(dir, dirent.name);
-      return dirent.isDirectory() ? getFiles(res) : res;
+  const directoryEntries = await fs.readdir(dir, { withFileTypes: true });
+  const filesOrDirectories = await Promise.all(
+    directoryEntries.map(async (dirent) => {
+      const resolvedPath = path.resolve(dir, dirent.name);
+      return dirent.isDirectory() ? getFiles(resolvedPath) : resolvedPath;
     })
   );
-  return Array.prototype.concat(...files);
+  return filesOrDirectories.flat();
 }
 
 export async function readAllPosts(): Promise<PostData[]> {
   const files = await getFiles("./content");
   const mdFiles = files.filter(isMarkdown);
 
-  const posts: PostData[] = [];
-  for (const file of mdFiles) {
-    const content = await fs.readFile(file);
-    const post = parseFrontMatter(content.toString());
-    posts.push(post as PostData);
-  }
+  const posts: PostData[] = await Promise.all(
+    mdFiles.map(async (file) => {
+      const content = await fs.readFile(file);
+      const post = parseFrontMatter(content.toString());
+      return post as PostData;
+    })
+  );
   checkSlugUniqueness(posts);
-
   return posts;
 }
 
 function checkSlugUniqueness(posts: PostData[]): void {
-  const slugs: { [key: string]: boolean } = {};
+  const slugs = new Set<string>();
 
-  for (const post of posts) {
-    const postSlug = post.attributes.slug;
-
-    if (slugs[postSlug]) {
-      throw new Error(`Duplicate slug detected: ${post.attributes.title}`);
+  for (const {
+    attributes: { slug, title },
+  } of posts) {
+    if (slugs.has(slug)) {
+      throw new Error(`Duplicate slug detected: ${title}`);
     }
 
-    slugs[postSlug] = true;
+    slugs.add(slug);
   }
 }

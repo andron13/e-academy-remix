@@ -22,10 +22,19 @@ export default function BlogComponent() {
   const { attributes, body } = useLoaderData<typeof loader>();
 
   return (
-    <article>
-      <h1>{attributes.title}</h1>
-      <h2>{attributes.slug}</h2>
-      <ReactMarkdown>{body}</ReactMarkdown>
-    </article>
+    <div className="container mx-auto p-4">
+      <article className="prose lg:prose-xl mx-auto">
+        <h1 className="text-3xl mb-4 font-semibold text-blue-600">
+          {attributes.title}
+        </h1>
+        <h2 className="text-xl mb-4 font-light text-gray-500">
+          {attributes.subtitle}
+        </h2>
+        <p className="text-sm mb-4 text-gray-400">
+          Автор: {attributes.author} &bull; Дата: {attributes.date}
+        </p>
+        <ReactMarkdown className="text-black">{body}</ReactMarkdown>
+      </article>
+    </div>
   );
 }

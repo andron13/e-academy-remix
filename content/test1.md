@@ -5,9 +5,11 @@ subtitle: "test subtitle"
 description: "Тестово описание статьи"
 date: '2020-03-16'
 author: "andron13"
+contentType: news
 category: JavaScript
 tags: [ tag1, tag2, tag3, EventLoop ]
 weight: 100
+image: "path"
 slug: test-slug-1
 ---
 

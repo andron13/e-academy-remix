@@ -9,7 +9,9 @@ category: React Native
 level: basic
 tags: [ Platform, Android, iOS  ]
 weight: -100
-slug: platform-specific-code 
+slug: platform-specific-code
+contentType: news
+image: "path"
 ---
 
 При создании кросс-платформенного приложения вы захотите повторно использовать как можно больше кода. Однако могут возникнуть ситуации, когда имеет смысл варьировать код, например, когда вы хотите реализовать отдельные визуальные компоненты для Android и iOS.

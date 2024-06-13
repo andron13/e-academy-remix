@@ -3,56 +3,72 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply mx-auto max-w-big ;
-        font-family: "system-ui, sans-serif", serif;
-    }
+  body {
+    @apply mx-auto max-w-big;
+    font-family: "system-ui, sans-serif", serif;
+  }
 
-    header, aside, main {
-    }
+  header,
+  aside,
+  main {
+  }
 
-    h1 {
-        @apply text-3xl 2xl:text-6xl xl:text-5xl;
-    }
+  h1 {
+    @apply text-3xl 2xl:text-6xl xl:text-5xl;
+  }
 
-    h2 {
-        @apply text-3xl xl:text-3xl;
-    }
+  h2 {
+    @apply text-3xl xl:text-3xl;
+  }
 
-    h3, h4, h5, h6 {
-        @apply text-2xl ;
-    }
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-2xl;
+  }
 
-    h1, h2, h3, h4, h5, h6 {
-        @apply text-teal-800 py-2 font-bold;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-teal-800 py-2 font-bold;
+  }
 
-    main {
-        @apply p-2 md:p-5;
-    }
+  main {
+    @apply p-2 md:p-5;
+  }
 
-    aside {
-        @apply p-2 2xl:p-5;
-    }
+  aside {
+    @apply p-2 2xl:p-5;
+  }
 
-    li, a {
-        @apply break-words lg:text-xl;
-    }
+  li,
+  a {
+    @apply break-words lg:text-xl;
+  }
 
-    footer {
-        @apply  md:p-5;
-    }
+  footer {
+    @apply md:p-5;
+  }
 
-    p {
-        @apply my-2 text-justify lg:text-left;
-    }
+  p {
+    @apply my-2 text-justify lg:text-left;
+  }
+
+  pre {
+    @apply p-4 bg-gray-800 text-white rounded-md overflow-auto;
+  }
+  code {
+    @apply p-1 bg-gray-700 text-green-300 rounded font-mono text-sm;
+  }
+
+  pre code {
+    @apply p-0 bg-transparent text-white;
+  }
 }
-
 
 @layer utilities {
-
 }
-
-
-
-

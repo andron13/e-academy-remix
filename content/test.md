@@ -5,9 +5,12 @@ subtitle: "This is a subtitle"
 description: "A brief description of the test article"
 date: '2022-03-16'
 author: "Tester"
+contentType: news
 category: JavaScript
+level: basic
 tags: [ test_tag_1, test_tag_2, test_tag_3, TestEventLoop ]
 weight: 100
+image: "path"
 slug: test-slug
 ---
 

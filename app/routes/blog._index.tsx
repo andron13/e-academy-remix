@@ -16,13 +16,14 @@ export default function Index() {
       <p className="mb-8">Добро пожаловать в наш блог!</p>
       <ul>
         {posts.map((post, index) => (
-          <li key={index} className="mb-4">
+          <li key={index} className="mb-4 bg-white p-4 rounded-md shadow-sm">
             <Link
               to={`/blog/${post.attributes.slug}`}
               className="text-blue-500 hover:underline"
             >
               {post.attributes.title}
             </Link>
+            <p className="text-gray-600 mt-2">{post.attributes.description}</p>
           </li>
         ))}
       </ul>

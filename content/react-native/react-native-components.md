@@ -9,10 +9,12 @@ description: "React Native – популярный фреймворк для р
 высокопроизводительные мобильные приложения. Ниже мы рассмотрим некоторые из них:"
 date: '2024-02-09'
 author: "Ирина Игнатьева"
+contentType: news
 category: React Native
 level: basic
 tags: [ View, Text, TextInput, ScrollView, FlatList, SectionList, ActivityIndicator, Image, ImageBackground, KeyboardAvoidingView, Modal, RefreshControl, SafeAreaView, StatusBar, Switch, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, Pressable, Button, VirtualizedList, DrawerLayoutAndroid, TouchableNativeFeedback, InputAccessoryView ]
 weight: 100
+image: "path"
 slug: introduction-in-all-react-native-components
 ---
 
