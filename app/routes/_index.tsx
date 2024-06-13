@@ -16,57 +16,79 @@ export default function Index() {
   return (
     <div
       style={{
-        fontFamily: "Comfortaa, cursive",
-        lineHeight: "1.8",
-        backgroundColor: "#FFEBCD",
+        fontFamily: "Arial, sans-serif",
+        lineHeight: "1.6",
+        backgroundColor: "#ffffff",
         padding: "20px",
-        color: "#4B0082",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        color: "#333333",
         height: "100vh",
       }}
     >
-      <h1>Welcome to our Vibrant Programming Courses for Beginners!</h1>
+      <nav
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          paddingBottom: "1rem",
+        }}
+      >
+        <h2>Programming Courses for Beginners</h2>
+        <ul style={{ listStyle: "none", display: "flex", gap: "2rem" }}>
+          <li>
+            <Link
+              to="/blog/test"
+              style={{
+                textDecoration: "none",
+                color: "#333333",
+                fontSize: "16px",
+              }}
+            >
+              Test Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/articles"
+              style={{
+                textDecoration: "none",
+                color: "#333333",
+                fontSize: "16px",
+              }}
+            >
+              Articles
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/test"
+              style={{
+                textDecoration: "none",
+                color: "#333333",
+                fontSize: "16px",
+              }}
+            >
+              Test Page
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      <h1>Welcome to our Programming Courses for Beginners!</h1>
       <p>
-        Embark on a colourful journey into the world of programming with our
-        beginner-friendly courses. Immerse yourself in a variety of programming
-        languages and interesting topics.
+        Start your journey in programming with our beginner-friendly courses.
+        Choose from a variety of programming languages and topics.
       </p>
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        <li>
-          <Link to="/blog/test" style={{ color: "#800000", fontSize: "20px" }}>
-            /blog/test
-          </Link>
-        </li>
-        <li>
-          <Link to="/articles" style={{ color: "#008B8B", fontSize: "20px" }}>
-            articles
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/test"
-            style={{ color: "#483D8B", fontSize: "20px" }}
-          ></Link>
-        </li>
-      </ul>
-
-      <p>Don't wait. Let the colors of learning brighten up your life today!</p>
+      <p>Don't wait. Start learning today!</p>
 
       <button
         style={{
-          backgroundColor: "#FFD700",
-          color: "black",
-          border: "2px solid black",
-          padding: "15px 30px",
-          borderRadius: "10px",
-          fontSize: "22px",
+          backgroundColor: "#007BFF",
+          color: "white",
+          border: "none",
+          padding: "12px 24px",
+          borderRadius: "4px",
+          fontSize: "18px",
           cursor: "pointer",
-          marginTop: "20px",
-          fontWeight: "bold",
         }}
       >
         Sign Up
