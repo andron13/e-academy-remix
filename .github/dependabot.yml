@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    reviewers:
+      - 'andron13'
+    commit-message:
+      prefix: 'deps'
+    ignore:
+      - dependency-type: 'development'
+      - dependency-name: 'eslint'
+        update-types: ['version-update:semver-major']
+    open-pull-requests-limit: 5
