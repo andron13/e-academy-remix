@@ -9,7 +9,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
   const { slug } = params;
   const markdown = await readPost(`${slug}.md`);
   if (!markdown) {
-    throw new Response("Not Found", { status: 404 });
+    throw new Response("Not Found!", { status: 404 });
   }
   const { attributes, body }: { attributes: Attributes; body: Body } =
     parseFrontMatter(markdown);
