@@ -1,8 +1,19 @@
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import { LoaderFunctionArgs } from "@remix-run/router/utils";
 import ReactMarkdown from "react-markdown";
 import { readAllPosts } from "~/lib/readPost.server";
 
+export const handle = {
+  breadcrumb: ({ params }: LoaderFunctionArgs) => (
+    <>
+      <Link to="/">Главная</Link>
+      {" / "}
+      <Link to="/blog">Блог</Link>
+      {" / "}
+      <>{`Post ${params.slug}`}</>
+    </>
+  ),
+};
 export async function loader({ params }: LoaderFunctionArgs) {
   const { slug } = params;
   const post = (await readAllPosts()).find(

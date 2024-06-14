@@ -1,5 +1,4 @@
 import { useLoaderData } from "@remix-run/react";
-import { LoaderFunctionArgs } from "@remix-run/router/utils";
 import { Link } from "react-router-dom";
 import { readAllPosts } from "~/lib/readPost.server";
 import { PostData } from "~/lib/type";
@@ -8,7 +7,9 @@ export async function loader() {
   const posts: PostData[] = await readAllPosts();
   return { posts };
 }
-
+export const handle = {
+  breadcrumb: () => <Link to="/blog">Блог</Link>,
+};
 export default function Index() {
   const { posts }: { posts: PostData[] } = useLoaderData();
   return (

@@ -84,7 +84,8 @@ module.exports = {
         "plugin:import/typescript",
       ],
       rules:{
-        "@typescript-eslint/no-unused-vars": "warn"
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/ban-ts-comment": "off"
       }
     },
 

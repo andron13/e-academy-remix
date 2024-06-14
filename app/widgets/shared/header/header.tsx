@@ -4,6 +4,7 @@ import { Link, useLocation } from "@remix-run/react";
 import { FC } from "react";
 import { PostData } from "~/lib/type";
 import { mainMenuLinks } from "~/shared/navigation";
+import { Breadcrumb } from "~/widgets/shared/header/breadcrumb";
 import { websiteTitle } from "~/widgets/shared/websiteconfig/config";
 
 type HeaderProps = {
@@ -11,7 +12,6 @@ type HeaderProps = {
 };
 const styles: string =
   "p-5 bg-gradient-to-r from-purple-100 to-blue-100 border-b border-gray-800 z-10";
-const defaultTitle: string = "Курсы программирования для начинающих!";
 
 const menu = (
   <ul className="list-none flex gap-6">
@@ -52,6 +52,9 @@ export const Header: FC<HeaderProps> = () => {
         {lastSegment}
         {menu}
       </nav>
+      <ol>
+        <Breadcrumb />
+      </ol>
     </header>
   );
 };
