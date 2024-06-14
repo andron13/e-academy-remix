@@ -1,4 +1,5 @@
 import { useLoaderData } from "@remix-run/react";
+import { LoaderFunctionArgs } from "@remix-run/router/utils";
 import { Link } from "react-router-dom";
 import { readAllPosts } from "~/lib/readPost.server";
 import { PostData } from "~/lib/type";

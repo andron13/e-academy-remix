@@ -1,9 +1,13 @@
+//app/widgets/shared/header/header.tsx
+
 import { Link, useLocation } from "@remix-run/react";
 import { FC } from "react";
+import { PostData } from "~/lib/type";
 import { mainMenuLinks } from "~/shared/navigation";
+import { websiteTitle } from "~/widgets/shared/websiteconfig/config";
 
 type HeaderProps = {
-  title?: string;
+  posts?: PostData[];
 };
 const styles: string =
   "p-5 bg-gradient-to-r from-purple-100 to-blue-100 border-b border-gray-800 z-10";
@@ -25,12 +29,19 @@ const menu = (
   </ul>
 );
 
-export const Header: FC<HeaderProps> = ({ title = defaultTitle }) => {
+export const Header: FC<HeaderProps> = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  console.log({ currentPath });
   const segments = currentPath.split("/");
   const lastSegment = segments.pop();
-  const viewTitle = title + "!";
+  const viewTitle = websiteTitle;
+
+  // const post = posts.find((e) => e.attributes.slug === lastSegment);
+  // console.log({ post });
+  // if (post) {
+  //   viewTitle = post.attributes.title;
+  // }
 
   return (
     <header className={styles}>

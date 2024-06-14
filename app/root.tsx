@@ -28,7 +28,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </head>
       <body className="h-screen flex flex-col justify-between">
         <Header />
-        <main className="text-gray-800 flex-grow flex flex-col justify-start bg-gradient-to-b from-purple-100 to-white relative overflow-hidden">
+        <main className="text-gray-800 flex-grow flex flex-col justify-start bg-gradient-to-b from-purple-100 to-white relative">
           {children}
         </main>
         <ScrollRestoration />
