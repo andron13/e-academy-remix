@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link, useLocation } from "@remix-run/react";
 import { FC } from "react";
 import { mainMenuLinks } from "~/shared/navigation";
 
@@ -26,12 +26,19 @@ const menu = (
 );
 
 export const Header: FC<HeaderProps> = ({ title = defaultTitle }) => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const segments = currentPath.split("/");
+  const lastSegment = segments.pop();
+  const viewTitle = title + "!";
+
   return (
     <header className={styles}>
       <nav className="flex justify-between">
-        <Link title={title} to="/" className="hover:underline">
-          <h2>{title}</h2>
+        <Link title={viewTitle} to="/" className="hover:underline">
+          <h2>{viewTitle}</h2>
         </Link>
+        {lastSegment}
         {menu}
       </nav>
     </header>

@@ -51,3 +51,10 @@ function checkSlugUniqueness(posts: PostData[]): void {
     slugs.add(slug);
   }
 }
+export const findPostBySlug = async (
+  slug: string
+): Promise<PostData | undefined> => {
+  const posts = await readAllPosts();
+  const post = posts.find((post) => post.attributes.slug === slug);
+  return post;
+};
