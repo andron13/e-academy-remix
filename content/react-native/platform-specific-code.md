@@ -7,7 +7,7 @@ date: '2020-04-13'
 author: "andron13"
 category: React Native
 level: basic
-tags: [ Platform, Android, iOS  ]
+tags: [Platform, Android, iOS]
 weight: -100
 slug: platform-specific-code
 contentType: news

@@ -28,30 +28,40 @@ export async function readAllPosts(): Promise<PostData[]> {
   const files = await getFiles("./content");
   const mdFiles = files.filter(isMarkdown);
 
-  const posts: PostData[] = await Promise.all(
+  let posts: PostData[] = await Promise.all(
     mdFiles.map(async (file) => {
       const content = await fs.readFile(file);
       const post = parseFrontMatter(content.toString());
       return post as PostData;
     })
   );
-  checkSlugUniqueness(posts);
+
+  // TODO we filter draft md files!!!
+  posts = checkSlugUniqueness(posts);
+  posts = filterOutDrafts(posts);
   return posts;
 }
 
-function checkSlugUniqueness(posts: PostData[]): void {
-  const slugs = new Set<string>();
+const isDraft = (post: PostData): boolean => post.attributes.draft;
 
-  for (const {
-    attributes: { slug, title },
-  } of posts) {
-    if (slugs.has(slug)) {
-      throw new Error(`Duplicate slug detected: ${title}`);
+function filterOutDrafts(posts: PostData[]): PostData[] {
+  return posts.filter((post) => !isDraft(post));
+}
+
+function checkSlugUniqueness(posts: PostData[]): PostData[] {
+  const slugMap = new Map<string, PostData>();
+
+  posts.forEach((post) => {
+    if (slugMap.has(post.attributes.slug)) {
+      throw new Error(`Duplicate slug detected: ${post.attributes.title}`);
     }
 
-    slugs.add(slug);
-  }
+    slugMap.set(post.attributes.slug, post);
+  });
+
+  return Array.from(slugMap.values());
 }
+
 export const findPostBySlug = async (
   slug: string
 ): Promise<PostData | undefined> => {

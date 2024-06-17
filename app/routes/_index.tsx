@@ -1,3 +1,5 @@
+import { readAllPosts } from "~/lib/readPost.server";
+import { PostData } from "~/lib/type";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
